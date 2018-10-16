@@ -1,2 +1,2 @@
 # zookeeper
-zookeeper主从服务demo
+zookeeper主从服务切换demo
