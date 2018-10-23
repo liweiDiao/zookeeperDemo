@@ -1,0 +1,42 @@
+
+spring:
+  profiles: dev
+
+  #ssdb config
+  ssdb:
+    master:
+      host: 192.168.168.1
+      port: 8888
+    slave:
+      host: 192.168.168.2
+      port: 8888
+    timeout: 3000
+    pool:
+      maxIdle: 8
+      minIdle: 0
+      maxActive: 10
+      maxWait: -1
+      whenExhaustedAction: 1
+      testOnBorrow: false
+      testOnReturn: false
+      testWhileIdle: true
+      timeBetweenEvictionRunsMillis: -1
+
+
+  #master or slave host port
+  slaveof: 
+    zk:
+      addr: 192.168.253.1:2181
+      root: dataware-dev/monitor
+      # 重试策略 最大重试次数
+      max: 3
+      sleep: 5000
+      #连接超时时间
+      connection: 5000
+      #会话超时时间
+      session: 3600
+  
+logging:
+  level:
+    root: INFO
+  path: D:/log/
