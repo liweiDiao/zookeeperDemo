@@ -26,7 +26,7 @@ spring:
   #master or slave host port
   slaveof: 
     zk:
-      addr: 192.168.253.1:2181
+      addr: 192.168.253.1:2181,192.168.253.1:2182
       root: dataware-dev/monitor
       # 重试策略 最大重试次数
       max: 3

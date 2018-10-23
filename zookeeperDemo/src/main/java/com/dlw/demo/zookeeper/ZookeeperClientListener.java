@@ -4,6 +4,7 @@ import com.dlw.demo.utils.JodaDateUtil;
 import org.apache.curator.framework.recipes.leader.LeaderLatchListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
@@ -12,6 +13,7 @@ import java.util.Date;
  * @Author diaoliwei
  * @Date 2018/10/23 17:40
  */
+@Component
 public class ZookeeperClientListener implements LeaderLatchListener {
 
     private final static Logger log = LoggerFactory.getLogger(ZookeeperClientListener.class);
