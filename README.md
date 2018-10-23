@@ -1,5 +1,5 @@
 # zookeeper
-zookeeper主从服务切换demo
+zookeeper主从服务切换demo.
 
 # zookeeper简单配置（具体可以网上搜索，有很多文章）
 
