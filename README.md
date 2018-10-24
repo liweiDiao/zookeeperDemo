@@ -44,6 +44,6 @@ zkServer.sh status</br>
 
 
 
-# 该demo 链接同一个zk， 启动2个服务，当其中一个服务停了或运行超时，另外一个服务就被切换为leader
+# 该demo 链接同一个zk， 启动2个jar服务，当其中一个服务停了或运行超时，另外一个服务就被切换为leader
 
 
