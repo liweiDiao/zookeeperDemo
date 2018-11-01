@@ -26,7 +26,7 @@ spring:
   #master or slave host port
   slaveof: 
     zk:
-      addr: 192.168.253.1:2181,192.168.253.1:2182
+      addr: 192.168.145.128:2181
       root: dataware-dev/monitor
       # 重试策略 最大重试次数
       max: 3
@@ -37,6 +37,6 @@ spring:
       session: 3600
   
 logging:
-  level:
-    root: INFO
-  path: D:/log/
+  #config: classpath:log4j2.xml
+  #level:
+   # root: INFO

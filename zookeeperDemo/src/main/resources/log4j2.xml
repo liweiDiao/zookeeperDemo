@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- monitorInterval:指定log4j自动重新配置的监测间隔时间 -->
+<Configuration status="INFO" monitorInterval="10">
+    <Properties>
+        <Property name="layoutpattern">%d %5p %30.30c{1.} : %m %ex%n</Property>
+    </Properties>
+    <Appenders>
+
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="${layoutpattern}"/>
+        </Console>
+
+        <RollingRandomAccessFile name="Error"
+                                 fileName="/data/appcenter/data-processing-center/Logs/dwh.ERROR"
+                                 filePattern="/data/appcenter/data-processing-center/Logs/dwh.ERROR.%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="${layoutpattern}"/>
+            <ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+            <DefaultRolloverStrategy max="10"/>
+        </RollingRandomAccessFile>
+
+        <RollingRandomAccessFile name="Warn"
+                                 fileName="/data/appcenter/data-processing-center/Logs/dwh.WARN"
+                                 filePattern="/data/appcenter/data-processing-center/Logs/dwh.WARN.%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="${layoutpattern}"/>
+            <ThresholdFilter level="WARN" onMatch="ACCEPT" onMismatch="DENY"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+            <DefaultRolloverStrategy max="10"/>
+        </RollingRandomAccessFile>
+
+        <RollingRandomAccessFile name="Info"
+                                 immediateFlush="false"
+                                 append="true"
+                                 fileName="/data/appcenter/data-processing-center/Logs/dwh.INFO"
+                                 filePattern="/data/appcenter/data-processing-center/Logs/dwh.INFO.%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="${layoutpattern}"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+            <DefaultRolloverStrategy max="10"/>
+        </RollingRandomAccessFile>
+    </Appenders>
+    <Loggers>
+        <!--记录 qg.fangrui.boot 包及其子包 debug 及其以上的记录，并输出到文件中-->
+        <!--<Logger name="com.dlw.demo" level="info">
+            &lt;!&ndash; AppenderRef 可以控制文件输出对象&ndash;&gt;
+            <AppenderRef ref="File" />
+        </Logger>
+        <Logger name="com.dlw.demo" level="error">
+            &lt;!&ndash; AppenderRef 可以控制文件输出对象&ndash;&gt;
+            <AppenderRef ref="Error" />
+        </Logger>-->
+        <!--根记录全部输出到控制台上-->
+        <!--<Root level="info">
+            <AppenderRef ref="Console" />
+        </Root>-->
+        <asyncRoot level="INFO" additivity="false">
+            <AppenderRef ref="Error"/>
+            <AppenderRef ref="Warn"/>
+            <AppenderRef ref="Info"/>
+            <AppenderRef ref="STDOUT"/>
+        </asyncRoot>
+    </Loggers>
+</Configuration>
