@@ -1,5 +1,7 @@
 # zookeeper
-zookeeper主从服务切换demo.
+ zookeeper主从服务切换demo.
+
+ demo使用springboot、jdk1.8、zookeeper3.4.12
 
 # zookeeper简单配置（具体可以网上搜索，有很多文章）
 
@@ -44,6 +46,6 @@ zkServer.sh status</br>
 
 
 
-
+# 该demo 链接同一个zk， 启动2个jar服务，当其中一个服务停了或运行超时，另外一个服务就被切换为leader
 
 
