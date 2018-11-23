@@ -55,6 +55,24 @@ public class ZkDemoApplicationRunner implements ApplicationRunner {
             log.error("zk客户端已关闭");
             return;
         }
-        log.info("======>>>>>zk客户端连接成功<<<<<<=======");
+
+        while (true) {  // 测试日志用
+            try {
+                if(!zkClient.hasLeadership()){
+                    log.info("2当前服务不是leader");
+                    Thread.sleep(2000);
+                    log.error("error:::::::Test02 do it...>>>>>>> ");
+                    continue;
+                }  else {
+                    log.info("2当前服务是leader");
+                }
+                log.info("Test02 do it... ");
+                log.error("Test02 do it...>>>>>>> ");
+            } catch (Exception e) {
+                log.error("Exception=====>>>>>>>>>>>>eeee:", e);
+            }
+        }
+
+        //log.info("======>>>>>zk客户端连接成功<<<<<<=======");
     }
 }
