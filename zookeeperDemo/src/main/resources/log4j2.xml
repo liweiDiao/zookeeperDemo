@@ -11,8 +11,8 @@
         </Console>
 
         <RollingRandomAccessFile name="Error"
-                                 fileName="/data/appcenter/data-processing-center/Logs/dwh.ERROR"
-                                 filePattern="/data/appcenter/data-processing-center/Logs/dwh.ERROR.%d{yyyy-MM-dd}.log">
+                                 fileName="/data/appLog/Logs/zkDemo.ERROR"
+                                 filePattern="/data/appLog/Logs/zkDemo.ERROR.%d{yyyy-MM-dd}.log">
             <PatternLayout pattern="${layoutpattern}"/>
             <ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
             <Policies>
@@ -22,8 +22,8 @@
         </RollingRandomAccessFile>
 
         <RollingRandomAccessFile name="Warn"
-                                 fileName="/data/appcenter/data-processing-center/Logs/dwh.WARN"
-                                 filePattern="/data/appcenter/data-processing-center/Logs/dwh.WARN.%d{yyyy-MM-dd}.log">
+                                 fileName="/data/appLog/Logs/zkDemo.WARN"
+                                 filePattern="/data/appLog/Logs/zkDemo.WARN.%d{yyyy-MM-dd}.log">
             <PatternLayout pattern="${layoutpattern}"/>
             <ThresholdFilter level="WARN" onMatch="ACCEPT" onMismatch="DENY"/>
             <Policies>
@@ -35,8 +35,8 @@
         <RollingRandomAccessFile name="Info"
                                  immediateFlush="false"
                                  append="true"
-                                 fileName="/data/appcenter/data-processing-center/Logs/dwh.INFO"
-                                 filePattern="/data/appcenter/data-processing-center/Logs/dwh.INFO.%d{yyyy-MM-dd}.log">
+                                 fileName="/data/appLog/Logs/zkDemo.INFO"
+                                 filePattern="/data/appLog/Logs/zkDemo.INFO.%d{yyyy-MM-dd}.log">
             <PatternLayout pattern="${layoutpattern}"/>
             <Policies>
                 <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
