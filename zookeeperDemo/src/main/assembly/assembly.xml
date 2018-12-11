@@ -6,7 +6,7 @@
   <fileSets>
     <fileSet>
       <directory>src/main/bin</directory>
-      <outputDirectory>./</outputDirectory>
+      <outputDirectory>bin</outputDirectory>
       <fileMode>0755</fileMode>
     </fileSet>
     <fileSet>
