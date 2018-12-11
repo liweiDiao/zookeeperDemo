@@ -45,19 +45,6 @@
         </RollingRandomAccessFile>
     </Appenders>
     <Loggers>
-        <!--记录 qg.fangrui.boot 包及其子包 debug 及其以上的记录，并输出到文件中-->
-        <!--<Logger name="com.dlw.demo" level="info">
-            &lt;!&ndash; AppenderRef 可以控制文件输出对象&ndash;&gt;
-            <AppenderRef ref="File" />
-        </Logger>
-        <Logger name="com.dlw.demo" level="error">
-            &lt;!&ndash; AppenderRef 可以控制文件输出对象&ndash;&gt;
-            <AppenderRef ref="Error" />
-        </Logger>-->
-        <!--根记录全部输出到控制台上-->
-        <!--<Root level="info">
-            <AppenderRef ref="Console" />
-        </Root>-->
         <asyncRoot level="INFO" additivity="false">
             <AppenderRef ref="Error"/>
             <AppenderRef ref="Warn"/>
