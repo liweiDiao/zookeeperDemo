@@ -1,7 +1,7 @@
 # zookeeper
  zookeeper主从服务切换demo.
 
- demo使用springboot、jdk1.8、zookeeper3.4.12、slf4j+ log4j2
+ demo使用springboot、jdk1.8、zookeeper3.4.12、joda、slf4j+ log4j2
 
 # zookeeper简单配置（具体可以网上搜索，有很多文章）
 
