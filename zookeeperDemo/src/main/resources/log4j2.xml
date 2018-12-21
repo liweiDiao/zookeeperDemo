@@ -18,7 +18,12 @@
             <Policies>
                 <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
             </Policies>
-            <DefaultRolloverStrategy max="10"/>
+            <DefaultRolloverStrategy>
+                <Delete basePath="/data/appLog/Logs/" maxDepth="1">
+                    <IfFileName glob="zkDemo.ERROR.*.log" />
+                    <IfLastModified age="10d" />
+                </Delete>
+            </DefaultRolloverStrategy>
         </RollingRandomAccessFile>
 
         <RollingRandomAccessFile name="Warn"
@@ -29,7 +34,12 @@
             <Policies>
                 <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
             </Policies>
-            <DefaultRolloverStrategy max="10"/>
+            <DefaultRolloverStrategy>
+                <Delete basePath="/data/appLog/Logs/" maxDepth="1">
+                    <IfFileName glob="zkDemo.WARN.*.log" />
+                    <IfLastModified age="10d" />
+                </Delete>
+            </DefaultRolloverStrategy>
         </RollingRandomAccessFile>
 
         <RollingRandomAccessFile name="Info"
@@ -41,7 +51,12 @@
             <Policies>
                 <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
             </Policies>
-            <DefaultRolloverStrategy max="10"/>
+            <DefaultRolloverStrategy>
+                <Delete basePath="/data/appLog/Logs/" maxDepth="1">
+                    <IfFileName glob="zkDemo.INFO.*.log" />
+                    <IfLastModified age="10d" />
+                </Delete>
+            </DefaultRolloverStrategy>
         </RollingRandomAccessFile>
     </Appenders>
     <Loggers>
