@@ -19,8 +19,8 @@ public class HelloController {
     @RequestMapping("/index")
     public String index(){
         log.error("HelloController=====error====");
-        log.warn("HelloController=====error====");
-        log.info("HelloController=====error====");
+        log.warn("HelloController=====warn====");
+        log.info("HelloController=====info====");
         return "hello world";
     }
 
