@@ -2,6 +2,8 @@
  zookeeper主从服务切换demo.
 
  demo使用springboot、jdk1.8、zookeeper3.4.12、joda、slf4j+ log4j2
+ 
+ ### 该demo实现 链接同一个zk， 启动2个jar服务，当其中一个服务停了或运行超时，另外一个服务就被切换为leader，适用于定时任务
 
 # zookeeper简单配置（具体可以网上搜索，有很多文章）
 
@@ -48,6 +50,6 @@ zkServer.sh status</br>
 其中springboot的.yml配置文件，可以在部署jar包的同级目录下建立config目录，将application-pro.yml、application-dev.yml、application.yml 这些配置文件放到config目录下，即可将jar包引用外置配置文件。    
 
 
-# 该demo 链接同一个zk， 启动2个jar服务，当其中一个服务停了或运行超时，另外一个服务就被切换为leader
+
 
 
