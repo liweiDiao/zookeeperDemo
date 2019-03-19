@@ -50,6 +50,6 @@ zkServer.sh status</br>
 其中springboot的.yml配置文件，可以在部署jar包的同级目录下建立config目录，将application-pro.yml、application-dev.yml、application.yml 这些配置文件放到config目录下，即可将jar包引用外置配置文件。    
 
 
-
+#### demo中已经添加了一个定时任务测试，保证多台机器时，只有一台机器跑定时任务，当前机器挂掉后，切换到另外一台机器。
 
 
