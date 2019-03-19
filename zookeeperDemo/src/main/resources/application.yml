@@ -4,3 +4,21 @@ server:
 spring:
   profiles:
     active: dev
+
+  #quartz config
+  quartz:
+    properties:
+      org:
+        quartz:
+          scheduler:
+            instanceName: clusteredScheduler
+            instanceId: AUTO
+          threadPool:
+            class: org.quartz.simpl.SimpleThreadPool
+            threadCount: 10
+            threadPriority: 5
+            threadsInheritContextClassLoaderOfInitializingThread: true
+
+    corn:
+      # 每天零点2分执行, 处理当天的数据
+      testTask: "0 45 15 * * ?"

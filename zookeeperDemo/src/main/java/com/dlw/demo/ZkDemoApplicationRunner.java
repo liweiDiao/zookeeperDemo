@@ -5,6 +5,7 @@ import com.dlw.demo.zookeeper.ZookeeperClientListener;
 import com.dlw.demo.zookeeper.ZookeeperConfig;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
+import org.apache.curator.framework.imps.CuratorFrameworkState;
 import org.apache.curator.framework.recipes.leader.LeaderLatch;
 import org.apache.curator.retry.ExponentialBackoffRetry;
 import org.slf4j.Logger;
@@ -38,7 +39,7 @@ public class ZkDemoApplicationRunner implements ApplicationRunner {
                 .connectString(zookeeperConfig.getAddr())
                 .retryPolicy(new ExponentialBackoffRetry(zookeeperConfig.getSleepTime(), zookeeperConfig.getMax()))
                 .connectionTimeoutMs(zookeeperConfig.getConnectionTime()).build();
-        LeaderLatch leaderLatch = new LeaderLatch(client, "/leaderLatch", "client1", LeaderLatch.CloseMode.NOTIFY_LEADER);
+        LeaderLatch leaderLatch = new LeaderLatch(client, "/leaderLatch222", "client1", LeaderLatch.CloseMode.NOTIFY_LEADER);
         if (zkClientListener == null) {
             log.error("==================>>>>>>>>>>>>>>>>zkClientListener is null=====>>>>>>>>>>>");
         }
@@ -50,13 +51,13 @@ public class ZkDemoApplicationRunner implements ApplicationRunner {
             log.error("======>>>>>>zk客户端连接失败<<<<<=====error:{}===", e);
             return;
         }
-        boolean isZkCuratorStarted = client.isStarted();
-        if (!isZkCuratorStarted) {
+        CuratorFrameworkState state = client.getState();
+        if (CuratorFrameworkState.STOPPED == state) {
             log.error("zk客户端已关闭");
             return;
         }
 
-        while (true) {  // 测试日志用
+        /*while (true) {  // 测试日志用
             try {
                 if(!zkClient.hasLeadership()){
                     log.info("2当前服务不是leader");
@@ -71,7 +72,7 @@ public class ZkDemoApplicationRunner implements ApplicationRunner {
             } catch (Exception e) {
                 log.error("Exception=====>>>>>>>>>>>>eeee:", e);
             }
-        }
+        }*/
 
         //log.info("======>>>>>zk客户端连接成功<<<<<<=======");
     }

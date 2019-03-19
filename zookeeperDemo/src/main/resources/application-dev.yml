@@ -5,10 +5,10 @@ spring:
   #ssdb config
   ssdb:
     master:
-      host: 192.168.168.1
+      host: 10.12.40.25
       port: 8888
     slave:
-      host: 192.168.168.2
+      host: 10.12.40.25
       port: 8888
     timeout: 3000
     pool:
@@ -26,7 +26,7 @@ spring:
   #master or slave host port
   slaveof: 
     zk:
-      addr: 192.168.145.128:2181
+      addr: 10.12.51.95:2181
       root: dataware-dev/monitor
       # 重试策略 最大重试次数
       max: 3
@@ -37,6 +37,3 @@ spring:
       session: 3600
   
 logging:
-  #config: classpath:log4j2.xml
-  #level:
-   # root: INFO
