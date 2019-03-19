@@ -11,15 +11,15 @@
         </Console>
 
         <RollingRandomAccessFile name="Error"
-                                 fileName="/data/appLog/Logs/zkDemo.ERROR"
-                                 filePattern="/data/appLog/Logs/zkDemo.ERROR.%d{yyyy-MM-dd}.log">
+                                 fileName="/data/zookeeperDemo/logs/zkDemo.ERROR"
+                                 filePattern="/data/zookeeperDemo/logs/zkDemo.ERROR.%d{yyyy-MM-dd}.log">
             <PatternLayout pattern="${layoutpattern}"/>
             <ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
             <Policies>
                 <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
             </Policies>
             <DefaultRolloverStrategy>
-                <Delete basePath="/data/appLog/Logs/" maxDepth="1">
+                <Delete basePath="/data/zookeeperDemo/logs/" maxDepth="1">
                     <IfFileName glob="zkDemo.ERROR.*.log" />
                     <IfLastModified age="10d" />
                 </Delete>
@@ -27,15 +27,15 @@
         </RollingRandomAccessFile>
 
         <RollingRandomAccessFile name="Warn"
-                                 fileName="/data/appLog/Logs/zkDemo.WARN"
-                                 filePattern="/data/appLog/Logs/zkDemo.WARN.%d{yyyy-MM-dd}.log">
+                                 fileName="/data/zookeeperDemo/logs/zkDemo.WARN"
+                                 filePattern="/data/zookeeperDemo/logs/zkDemo.WARN.%d{yyyy-MM-dd}.log">
             <PatternLayout pattern="${layoutpattern}"/>
             <ThresholdFilter level="WARN" onMatch="ACCEPT" onMismatch="DENY"/>
             <Policies>
                 <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
             </Policies>
             <DefaultRolloverStrategy>
-                <Delete basePath="/data/appLog/Logs/" maxDepth="1">
+                <Delete basePath="/data/zookeeperDemo/logs/" maxDepth="1">
                     <IfFileName glob="zkDemo.WARN.*.log" />
                     <IfLastModified age="10d" />
                 </Delete>
@@ -45,14 +45,14 @@
         <RollingRandomAccessFile name="Info"
                                  immediateFlush="false"
                                  append="true"
-                                 fileName="/data/appLog/Logs/zkDemo.INFO"
-                                 filePattern="/data/appLog/Logs/zkDemo.INFO.%d{yyyy-MM-dd}.log">
+                                 fileName="/data/zookeeperDemo/logs/zkDemo.INFO"
+                                 filePattern="/data/zookeeperDemo/logs/zkDemo.INFO.%d{yyyy-MM-dd}.log">
             <PatternLayout pattern="${layoutpattern}"/>
             <Policies>
                 <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
             </Policies>
             <DefaultRolloverStrategy>
-                <Delete basePath="/data/appLog/Logs/" maxDepth="1">
+                <Delete basePath="/data/zookeeperDemo/logs/" maxDepth="1">
                     <IfFileName glob="zkDemo.INFO.*.log" />
                     <IfLastModified age="10d" />
                 </Delete>
