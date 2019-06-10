@@ -7,25 +7,39 @@ package com.dlw.demo.zookeeper;
  */
 public class ZookeeperClientInfo {
 
-    // 是否是leader 默认为false
+    /**
+     * 是否是leader 默认为false
+     */
     public static boolean isLeader = false;
 
-    // 客户端ID
+    /**
+     * 客户端ID
+     */
     private String id;
 
-    // 连接信息字符串
+    /**
+     * 连接信息字符串
+     */
     private String connectString;
 
-    // 节点路径
+    /**
+     * 节点路径
+     */
     private String path;
 
-    // 连接超时时间
+    /**
+     * 连接超时时间
+     */
     private Integer connectTimeOut;
 
-    // 最大连接次数
+    /**
+     * 最大连接次数
+     */
     private Integer maxRetries;
 
-    // 重连休眠时间
+    /**
+     * 重连休眠时间
+     */
     private Integer retrySleepTime;
 
     public static boolean isLeader() {
