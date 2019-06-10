@@ -28,6 +28,8 @@ public class TestTask extends QuartzJobBean {
             return;
         }
 
+        //TODO 具体业务代码处理， 可以用redis 存储该定时任务是否正常执行完成。try catch 异常时在redis中存储一个标识。当前机器宕机后，切换到另外一个机器从redis 中查询是否执行完成，未完成继续执行该定时任务。
+
         log.info("======>>>> TestTask end quartz......{}", JodaDateUtil.date2String(new Date()));
     }
 }
