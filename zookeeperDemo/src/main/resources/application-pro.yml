@@ -36,7 +36,3 @@ spring:
       #会话超时时间
       session: 3600
   
-logging:
-#  config: classpath:log4j2.xml
-#  level:
- #   root: INFO
