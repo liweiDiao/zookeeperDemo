@@ -92,7 +92,7 @@ public class ZookeeperClientInfo {
 
     @Override
     public String toString() {
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         sb.append("ZookeeperClientInfo{ ").append("id=").append(id)
                 .append(",isLeader=").append(isLeader).append(", connectString=").append(connectString)
                 .append(", path=").append(path).append(",connectTimeOut=").append(connectTimeOut)

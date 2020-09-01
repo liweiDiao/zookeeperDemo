@@ -23,6 +23,12 @@ public class ZookeeperClientListener implements LeaderLatchListener {
     @Autowired
     private ChangeLeaderService changeLeaderService;
 
+    /**
+     *  将本服务达成jar包，部署到2台服务器上。启动两个服务。
+     *  1、第一台服务（机器1）启动后抢到leader，会进入到该方法中。另外一台服务（机器2）会进入到notLeader()中。
+     *  2、当机器1宕机后，连接断开后zookeeper会删除临时节点。机器2根据选举会成为leader，成为leader后会进入到isLeader()中
+     *     然后在changeLeaderService.taskExecut() 再次将定时任务做补偿处理。
+     */
     @Override
     public void isLeader() {
         log.error(JodaDateUtil.date2String(new Date()) + ",当前服务已变为leader,将从事业务消费======>>>>");

@@ -18,6 +18,7 @@ public class ChangeLeaderServiceImpl implements ChangeLeaderService {
     @Override
     public void taskExecut() {
         // 从redis 中查询出定时任务的标识，是否正常执行完成，未完成的话，在这里再触发执行。
+        log.info("===ChangeLeaderServiceImpl===taskExecut()===");
 
     }
 }
