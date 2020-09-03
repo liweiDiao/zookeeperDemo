@@ -31,7 +31,7 @@ public class ZookeeperClientListener implements LeaderLatchListener {
      */
     @Override
     public void isLeader() {
-        log.error(JodaDateUtil.date2String(new Date()) + ",当前服务已变为leader,将从事业务消费======>>>>");
+        log.error("{},当前服务已变为leader,将从事业务消费======>>>>", JodaDateUtil.date2String(new Date()));
         ZookeeperClientInfo.isLeader = true;
 
         // 切换机器后，继续执行上一个机器未完成的定时任务。
@@ -40,7 +40,7 @@ public class ZookeeperClientListener implements LeaderLatchListener {
 
     @Override
     public void notLeader() {
-        log.error(JodaDateUtil.date2String(new Date()) + ",当前服务已退出leader,不再从事消费业务=====>>>");
+        log.error("{},当前服务已退出leader,不再从事消费业务=====>>>", JodaDateUtil.date2String(new Date()));
         ZookeeperClientInfo.isLeader = false;
     }
 }
