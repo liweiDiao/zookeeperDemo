@@ -52,4 +52,19 @@ zkServer.sh status</br>
 
 #### demo中已经添加了一个定时任务测试，保证多台机器时，只有一台机器跑定时任务，当前机器挂掉后，切换到另外一台机器。
 
+#### 以下补充效果截图
+
+##### 1.本地启动一个zookeeper服务    
+![Image text](https://github.com/liweiDiao/zookeeperDemo/blob/master/image/1.png)   
+##### 2.机器A启动服务(因A先注册到zk上，所以机器A为leader)    
+![Image text](https://github.com/liweiDiao/zookeeperDemo/blob/master/image/2.png)   
+##### 3.机器B启动服务    
+![Image text](https://github.com/liweiDiao/zookeeperDemo/blob/master/image/3.png)   
+##### 4.将机器A服务停止    
+![Image text](https://github.com/liweiDiao/zookeeperDemo/blob/master/image/4.png)   
+##### 4.因A机器服务已挂，zookeeper临时节点已丢失，机器B将成为leader    
+![Image text](https://github.com/liweiDiao/zookeeperDemo/blob/master/image/5.png)   
+
+
+
 
