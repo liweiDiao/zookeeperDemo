@@ -65,6 +65,3 @@ zkServer.sh status</br>
 ##### 4.因A机器服务已挂，zookeeper临时节点已丢失，机器B将成为leader    
 ![Image text](https://github.com/liweiDiao/zookeeperDemo/blob/master/image/5.png)   
 
-
-
-
