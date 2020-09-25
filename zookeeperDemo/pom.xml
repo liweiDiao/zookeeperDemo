@@ -25,6 +25,7 @@
 		<zookeeper.version>3.4.14</zookeeper.version>
 		<curator-framework.version>2.12.0</curator-framework.version>
 		<curator-recipes.version>2.12.0</curator-recipes.version>
+		<ssdb.version>9.4</ssdb.version>
 	</properties>
 
 	<dependencies>
@@ -86,6 +87,13 @@
 			<groupId>joda-time</groupId>
 			<artifactId>joda-time</artifactId>
 			<version>2.10</version>
+		</dependency>
+
+		<!-- SSDB的Java驱动 -->
+		<dependency>
+			<groupId>org.nutz</groupId>
+			<artifactId>ssdb4j</artifactId>
+			<version>${ssdb.version}</version>
 		</dependency>
 
 		<!-- 解析yml配置 -->

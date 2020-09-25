@@ -39,7 +39,7 @@ public class ZkDemoApplicationRunner implements ApplicationRunner {
                 .connectString(zookeeperConfig.getAddr())
                 .retryPolicy(new ExponentialBackoffRetry(zookeeperConfig.getSleepTime(), zookeeperConfig.getMax()))
                 .connectionTimeoutMs(zookeeperConfig.getConnectionTime()).build();
-        LeaderLatch leaderLatch = new LeaderLatch(client, "/leaderLatch222", "client1", LeaderLatch.CloseMode.NOTIFY_LEADER);
+        LeaderLatch leaderLatch = new LeaderLatch(client, "/diaoliwei", "client1", LeaderLatch.CloseMode.NOTIFY_LEADER);
         if (zkClientListener == null) {
             log.error("==================>>>>>>>>>>>>>>>>zkClientListener is null=====>>>>>>>>>>>");
         }
