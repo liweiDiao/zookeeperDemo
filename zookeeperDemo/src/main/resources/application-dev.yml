@@ -35,4 +35,20 @@ spring:
       connection: 5000
       #会话超时时间
       session: 3600
+
+  # mysql
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/complain?useUnicode=true&characterEncoding=utf-8
+    username: root
+    passowrd: 123456
+    primary:
+      max-idle: 10
+      max-wait: 1000
+      min-idle: 5
+      initial-size: 5
+      validation-query: SELECT 1
+      test-on-borrow: false
+      test-while-idle: true
+      time-between-eviction-runs-millis: 18800
   
