@@ -26,6 +26,9 @@
 		<curator-framework.version>2.12.0</curator-framework.version>
 		<curator-recipes.version>2.12.0</curator-recipes.version>
 		<ssdb.version>9.4</ssdb.version>
+		<jodatime.version>2.10</jodatime.version>
+		<binlog.version>0.21.0</binlog.version>
+		<disruptor.version>3.4.2</disruptor.version>
 	</properties>
 
 	<dependencies>
@@ -86,7 +89,13 @@
 		<dependency>
 			<groupId>joda-time</groupId>
 			<artifactId>joda-time</artifactId>
-			<version>2.10</version>
+			<version>${jodatime.version}</version>
+		</dependency>
+
+		<!-- dataBase -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
 
 		<!-- SSDB的Java驱动 -->
@@ -95,6 +104,19 @@
 			<artifactId>ssdb4j</artifactId>
 			<version>${ssdb.version}</version>
 		</dependency>
+
+		<!-- 监听mysql binlog工具 -->
+		<dependency>
+			<groupId>com.github.shyiko</groupId>
+			<artifactId>mysql-binlog-connector-java</artifactId>
+			<version>${binlog.version}</version>
+		</dependency>
+
+		<!-- spring validation -->
+		<!--<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>-->
 
 		<!-- 解析yml配置 -->
 		<!--<dependency>-->
