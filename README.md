@@ -62,6 +62,6 @@ zkServer.sh status</br>
 ![Image text](https://github.com/liweiDiao/zookeeperDemo/blob/master/image/3.png)   
 ##### 4.将机器A服务停止    
 ![Image text](https://github.com/liweiDiao/zookeeperDemo/blob/master/image/4.png)   
-##### 4.因A机器服务已挂，zookeeper临时节点已丢失，机器B将成为leader    
+##### 4.因A机器服务已挂，zookeeper临时节点已丢失，机器B将自动成为leader    
 ![Image text](https://github.com/liweiDiao/zookeeperDemo/blob/master/image/5.png)   
 
