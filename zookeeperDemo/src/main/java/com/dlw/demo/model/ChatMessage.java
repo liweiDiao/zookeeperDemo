@@ -7,10 +7,14 @@ package com.dlw.demo.model.chatgpt;
  */
 public class ChatMessage {
 
-    //消息角色
+    /**
+     * 消息角色
+     */
     private String role;
 
-    //消息内容
+    /**
+     * 消息内容
+     */
     private String content;
 
     public String getRole() {
