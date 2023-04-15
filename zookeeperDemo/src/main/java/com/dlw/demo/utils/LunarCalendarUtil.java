@@ -1,3 +1,4 @@
+/*
 package com.dlw.demo.utils;
 
 import java.text.ParseException;
@@ -54,11 +55,13 @@ public class LunarCalendarUtil {
             0x1d0b6, 0x0d250, 0x0d520, 0x0dd45, 0x0b5a0, 0x056d0, 0x055b2,
             0x049b0, 0x0a577, 0x0a4b0, 0x0aa50, 0x1b255, 0x06d20, 0x0ada0};
 
-    /**
+    */
+/**
      * 农历y年的总天数
      * @param y
      * @return
-     */
+     *//*
+
     private static int yearDays(int y) {
         int i, sum = 348;
         for (i = 0x8000; i > 0x8; i >>= 1) {
@@ -68,11 +71,13 @@ public class LunarCalendarUtil {
         return (sum + leapDays(y));
     }
 
-    /**
+    */
+/**
      * 农历y年闰月的天数
      * @param y
      * @return
-     */
+     *//*
+
     private static int leapDays(int y) {
         if (leapMonth(y) != 0) {
             if ((lunarInfo[y - 1900] & 0x10000) != 0) {
@@ -85,21 +90,25 @@ public class LunarCalendarUtil {
         }
     }
 
-    /**
+    */
+/**
      * 农历y年闰哪个月1-12 , 没闰传回 0
      * @param y
      * @return
-     */
+     *//*
+
     private static int leapMonth(int y) {
         return (int) (lunarInfo[y - 1900] & 0xf);
     }
 
-    /**
+    */
+/**
      * 农历y年m月的总天数
      * @param y
      * @param m
      * @return
-     */
+     *//*
+
      private static int monthDays(int y, int m) {
         if ((lunarInfo[y - 1900] & (0x10000 >> m)) == 0)
             return 29;
@@ -270,4 +279,4 @@ public class LunarCalendarUtil {
         }
         return isHoliday;
     }
-}
+}*/
