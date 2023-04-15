@@ -1,14 +1,17 @@
+/*
 package com.dlw.demo.utils;
 
 import org.joda.time.DateTime;
 
 import java.util.concurrent.locks.Lock;
 
+*/
 /**
  * @Description
  * @Author diaoliwei
  * @Date 2021/1/20 17:03
- */
+ *//*
+
 public class LimitService {
 
     //当前指针的位置
@@ -28,10 +31,12 @@ public class LimitService {
         this.limitTimeSencond = limitTimeSencond;
     }
 
-    /**
+    */
+/**
      * 程序是否可以继续
      * @return
-     */
+     *//*
+
     public boolean isContinue() {
         DateTime currentNode = requestRing[currentIndex];
 //        if (currentNode != null && currentNode)
@@ -39,3 +44,4 @@ public class LimitService {
         return false;
     }
 }
+*/
